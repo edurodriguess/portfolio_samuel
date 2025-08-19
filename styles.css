@@ -1,0 +1,85 @@
+/* Segurança contra scroll horizontal */
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+:root {
+    --gap: 1rem;
+}
+body {
+    background-color: #f7f7f7;
+}
+
+/* Marca simples */
+.logo {
+    width: 36px;
+    height: 36px;
+    border: 2px solid #111;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+/* Sidebar colapsável */
+#sidebar {
+    /* elemento que colapsa horizontalmente */
+}
+.sidebar-inner {
+    width: 280px;
+}
+
+/* Conteúdo */
+.content {
+    min-height: calc(100vh - 56px);
+}
+
+/* Links do menu em estilo texto */
+.nav-link-like {
+    padding: 0.25rem 0;
+    color: #0d6efd;
+    text-decoration: none;
+}
+.nav-link-like:hover {
+    text-decoration: underline;
+}
+
+/* Seções */
+.content-section {
+    min-height: 70vh;
+}
+.content-section.active {
+    display: block !important;
+}
+
+/* Masonry com CSS columns (mosaico responsivo) */
+.masonry {
+    column-width: 320px;
+    column-gap: var(--gap);
+}
+.masonry-item {
+    width: 100%;
+    display: inline-block;
+    margin: 0 0 var(--gap);
+    border-radius: 0.5rem;
+    cursor: zoom-in;
+}
+.masonry-item {
+    filter: saturate(1.05) contrast(1.02);
+}
+.masonry-item:hover {
+    filter: saturate(1.15) contrast(1.05);
+}
+.masonry img,
+.masonry-item {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 576px) {
+    .masonry {
+        column-width: 100%;
+    }
+}

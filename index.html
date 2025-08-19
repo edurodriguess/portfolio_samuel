@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio Fotográfico</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <!-- Topbar (mostra o botão de colapsar/expandir o MENU) -->
+    <nav class="navbar navbar-light bg-light border-bottom">
+        <div class="container-fluid">
+            <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
+                aria-controls="sidebar" aria-expanded="true" aria-label="Alternar menu">
+                <i class="bi bi-list"></i>
+            </button>
+            <div class="brand d-flex align-items-center m-1">
+                <div class="logo me-2">SS</div>
+                <strong>Portfólio</strong>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Layout: sidebar colapsável (horizontal) + conteúdo -->
+    <div class="layout d-flex">
+        <!-- MENU: colapsa/expande o MENU INTEIRO. Começa expandido (show). -->
+        <div id="sidebar" class="collapse collapse-horizontal show">
+            <aside class="sidebar-inner bg-white border-end vh-100 p-3">
+                <nav>
+                    <ul class="nav flex-column">
+                        <li class="nav-item mb-2">
+                            <button class="btn btn-link nav-link-like" data-section-target="#section-home">Home</button>
+                        </li>
+                        <li class="nav-item mb-2">
+                            <span class="text-uppercase fw-semibold small text-muted">Projetos</span>
+                            <ul class="list-unstyled ms-2 mt-2">
+                                <li><button class="btn btn-link nav-link-like"
+                                        data-section-target="#section-proj-1">Retratos</button></li>
+                                <li><button class="btn btn-link nav-link-like"
+                                        data-section-target="#section-proj-2">Eventos</button></li>
+                                <li><button class="btn btn-link nav-link-like"
+                                        data-section-target="#section-proj-3">Paisagens</button></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <button class="btn btn-link nav-link-like"
+                                data-section-target="#section-contato">Contato</button>
+                        </li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+
+        <!-- CONTEÚDO -->
+        <main class="content flex-fill p-3 p-md-4">
+            <!-- HOME (ativa por padrão) -->
+            <section id="section-home" class="content-section active" aria-labelledby="home-title">
+                <h1 id="home-title" class="h3 mb-3">Bem-vindo ao meu portfólio</h1>
+                <p class="text-secondary">Seleção curada de trabalhos recentes organizados por projetos. Clique em
+                    qualquer imagem para ver em tela cheia e navegar entre as fotos da mesma galeria.</p>
+            </section>
+
+            <!-- PROJETO 1: Retratos -->
+            <section id="section-proj-1" class="content-section d-none" aria-labelledby="p1-title">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h2 id="p1-title" class="h4 mb-0">Retratos</h2>
+                    <span class="text-muted small">6 imagens</span>
+                </div>
+                <div class="masonry" data-gallery="proj-1">
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200&auto=format&fit=crop"
+                        alt="Retrato 1" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=1200&auto=format&fit=crop"
+                        alt="Retrato 2" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1547106634-56dcd53ae883?q=80&w=1200&auto=format&fit=crop"
+                        alt="Retrato 3" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1548142813-c348350df52b?q=80&w=1200&auto=format&fit=crop"
+                        alt="Retrato 4" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=1200&auto=format&fit=crop"
+                        alt="Retrato 5" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1519340241574-2cec6aef0c01?q=80&w=1200&auto=format&fit=crop"
+                        alt="Retrato 6" />
+                </div>
+            </section>
+
+            <!-- PROJETO 2: Eventos -->
+            <section id="section-proj-2" class="content-section d-none" aria-labelledby="p2-title">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h2 id="p2-title" class="h4 mb-0">Eventos</h2>
+                    <span class="text-muted small">6 imagens</span>
+                </div>
+                <div class="masonry" data-gallery="proj-2">
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=1200&auto=format&fit=crop"
+                        alt="Evento 1" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1506157786151-b8491531f063?q=80&w=1200&auto=format&fit=crop"
+                        alt="Evento 2" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=1200&auto=format&fit=crop"
+                        alt="Evento 3" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1517423440428-a5a00ad493e8?q=80&w=1200&auto=format&fit=crop"
+                        alt="Evento 4" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1531058020387-3be344556be6?q=80&w=1200&auto=format&fit=crop"
+                        alt="Evento 5" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1543339308-43f2d9b7bf15?q=80&w=1200&auto=format&fit=crop"
+                        alt="Evento 6" />
+                </div>
+            </section>
+
+            <!-- PROJETO 3: Paisagens -->
+            <section id="section-proj-3" class="content-section d-none" aria-labelledby="p3-title">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h2 id="p3-title" class="h4 mb-0">Paisagens</h2>
+                    <span class="text-muted small">6 imagens</span>
+                </div>
+                <div class="masonry" data-gallery="proj-3">
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=1200&auto=format&fit=crop"
+                        alt="Paisagem 1" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop"
+                        alt="Paisagem 2" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop"
+                        alt="Paisagem 3" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop"
+                        alt="Paisagem 4" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1200&auto=format&fit=crop"
+                        alt="Paisagem 5" />
+                    <img class="masonry-item"
+                        src="https://images.unsplash.com/photo-1482192596544-9eb780fc7f66?q=80&w=1200&auto=format&fit=crop"
+                        alt="Paisagem 6" />
+                </div>
+            </section>
+
+            <!-- CONTATO -->
+            <section id="section-contato" class="content-section d-none" aria-labelledby="contato-title">
+                <h2 id="contato-title" class="h4 mb-3">Contato</h2>
+                <p class="text-muted">Preencha o formulário para solicitar um orçamento ou conversar sobre um projeto.
+                </p>
+                <form class="row g-3" action="#" method="post">
+                    <div class="col-md-6">
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control" placeholder="Seu nome" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">E-mail</label>
+                        <input type="email" class="form-control" placeholder="voce@email.com" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Mensagem</label>
+                        <textarea class="form-control" rows="5" placeholder="Escreva sua mensagem" required></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-dark">Enviar</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Lightbox (modal simples) -->
+    <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen-sm-down modal-xl modal-dialog-centered">
+            <div class="modal-content bg-black">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal" aria-label="Fechar"><i
+                            class="bi bi-x-lg"></i></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center p-0">
+                    <img id="lightboxImage" class="img-fluid" alt="Imagem ampliada" />
+                </div>
+                <div class="modal-footer border-0 justify-content-between">
+                    <button id="prevBtn" class="btn btn-outline-light"><i class="bi bi-chevron-left"></i>
+                        Anterior</button>
+                    <button id="nextBtn" class="btn btn-outline-light">Próxima <i
+                            class="bi bi-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
