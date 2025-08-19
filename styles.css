@@ -1,15 +1,28 @@
-/* Segurança contra scroll horizontal */
+/* Reset e scroll */
 html,
 body {
     max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 :root {
+    --sidebar-width: 280px;
     --gap: 1rem;
 }
+
 body {
     background-color: #f7f7f7;
+    padding-top: 56px; /* espaço para navbar fixa */
+}
+
+/* Navbar fixa */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1050;
 }
 
 /* Marca simples */
@@ -23,20 +36,42 @@ body {
     font-weight: 700;
 }
 
-/* Sidebar colapsável */
-#sidebar {
-    /* elemento que colapsa horizontalmente */
-}
+/* Sidebar fixo abaixo da navbar */
 .sidebar-inner {
-    width: 280px;
+    position: fixed;
+    top: 56px; /* altura da navbar */
+    left: 0;
+    width: var(--sidebar-width);
+    height: calc(100vh - 56px);
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    transition: transform 0.35s ease;
+}
+
+/* Collapsed state */
+.sidebar-inner.collapsed {
+    transform: translateX(-100%);
 }
 
 /* Conteúdo */
 .content {
+    flex: 1;
     min-height: calc(100vh - 56px);
+    padding: 1.5rem;
+    margin-left: var(--sidebar-width);
+    transition: margin-left 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Links do menu em estilo texto */
+/* Ajuste quando menu colapsado */
+.content.menu-collapsed {
+    margin-left: 0;
+}
+
+/* Links do menu */
 .nav-link-like {
     padding: 0.25rem 0;
     color: #0d6efd;
@@ -48,13 +83,16 @@ body {
 
 /* Seções */
 .content-section {
+    width: 100%;
+    max-width: 1200px;
     min-height: 70vh;
+    transition: opacity 0.3s ease;
 }
 .content-section.active {
     display: block !important;
 }
 
-/* Masonry com CSS columns (mosaico responsivo) */
+/* Masonry */
 .masonry {
     column-width: 320px;
     column-gap: var(--gap);
@@ -65,9 +103,8 @@ body {
     margin: 0 0 var(--gap);
     border-radius: 0.5rem;
     cursor: zoom-in;
-}
-.masonry-item {
     filter: saturate(1.05) contrast(1.02);
+    transition: filter 0.25s ease;
 }
 .masonry-item:hover {
     filter: saturate(1.15) contrast(1.05);
@@ -78,8 +115,13 @@ body {
     height: auto;
 }
 
-@media (max-width: 576px) {
-    .masonry {
-        column-width: 100%;
+@media (max-width: 768px) {
+    .sidebar-inner {
+        top: 56px;
+        height: calc(100vh - 56px);
+        z-index: 1040;
+    }
+    .content {
+        margin-left: 0;
     }
 }

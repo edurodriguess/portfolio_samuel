@@ -11,11 +11,10 @@
 </head>
 
 <body>
-    <!-- Topbar (mostra o botão de colapsar/expandir o MENU) -->
-    <nav class="navbar navbar-light bg-light border-bottom">
+    <!-- Topbar fixa -->
+    <nav class="navbar navbar-light bg-light border-bottom fixed-top">
         <div class="container-fluid">
-            <button class="btn btn-outline-dark" type="button" data-bs-toggle="collapse" data-bs-target="#sidebar"
-                aria-controls="sidebar" aria-expanded="true" aria-label="Alternar menu">
+            <button id="toggleSidebar" class="btn btn-outline-dark">
                 <i class="bi bi-list"></i>
             </button>
             <div class="brand d-flex align-items-center m-1">
@@ -25,49 +24,47 @@
         </div>
     </nav>
 
-    <!-- Layout: sidebar colapsável (horizontal) + conteúdo -->
+    <!-- Layout: sidebar + conteúdo -->
     <div class="layout d-flex">
-        <!-- MENU: colapsa/expande o MENU INTEIRO. Começa expandido (show). -->
-        <div id="sidebar" class="collapse collapse-horizontal show">
-            <aside class="sidebar-inner bg-white border-end vh-100 p-3">
-                <nav>
-                    <ul class="nav flex-column">
-                        <li class="nav-item mb-2">
-                            <button class="btn btn-link nav-link-like" data-section-target="#section-home">Home</button>
-                        </li>
-                        <li class="nav-item mb-2">
-                            <span class="text-uppercase fw-semibold small text-muted">Projetos</span>
-                            <ul class="list-unstyled ms-2 mt-2">
-                                <li><button class="btn btn-link nav-link-like"
-                                        data-section-target="#section-proj-1">Retratos</button></li>
-                                <li><button class="btn btn-link nav-link-like"
-                                        data-section-target="#section-proj-2">Eventos</button></li>
-                                <li><button class="btn btn-link nav-link-like"
-                                        data-section-target="#section-proj-3">Paisagens</button></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-link nav-link-like"
-                                data-section-target="#section-contato">Contato</button>
-                        </li>
-                    </ul>
-                </nav>
-            </aside>
-        </div>
+        <!-- Sidebar -->
+        <aside id="sidebar" class="sidebar-inner bg-white border-end vh-100">
+            <nav>
+                <ul class="nav flex-column p-4">
+                    <li class="nav-item mb-2">
+                        <button class="btn btn-link nav-link-like" data-section-target="#section-home">Home</button>
+                    </li>
+                    <li class="nav-item mb-2">
+                        <span class="text-uppercase fw-semibold small text-muted">Projetos</span>
+                        <ul class="list-unstyled ms-2 mt-2">
+                            <li><button class="btn btn-link nav-link-like"
+                                    data-section-target="#section-proj-1">Retratos</button></li>
+                            <li><button class="btn btn-link nav-link-like"
+                                    data-section-target="#section-proj-2">Eventos</button></li>
+                            <li><button class="btn btn-link nav-link-like"
+                                    data-section-target="#section-proj-3">Paisagens</button></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-link nav-link-like"
+                            data-section-target="#section-contato">Contato</button>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
 
-        <!-- CONTEÚDO -->
-        <main class="content flex-fill p-3 p-md-4">
-            <!-- HOME (ativa por padrão) -->
-            <section id="section-home" class="content-section active" aria-labelledby="home-title">
-                <h1 id="home-title" class="h3 mb-3">Bem-vindo ao meu portfólio</h1>
+        <!-- Conteúdo -->
+        <main class="content flex-fill">
+            <!-- HOME -->
+            <section id="section-home" class="content-section active">
+                <h1 class="h3 mb-3">Bem-vindo ao meu portfólio</h1>
                 <p class="text-secondary">Seleção curada de trabalhos recentes organizados por projetos. Clique em
                     qualquer imagem para ver em tela cheia e navegar entre as fotos da mesma galeria.</p>
             </section>
 
             <!-- PROJETO 1: Retratos -->
-            <section id="section-proj-1" class="content-section d-none" aria-labelledby="p1-title">
+            <section id="section-proj-1" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 id="p1-title" class="h4 mb-0">Retratos</h2>
+                    <h2 class="h4 mb-0">Retratos</h2>
                     <span class="text-muted small">6 imagens</span>
                 </div>
                 <div class="masonry" data-gallery="proj-1">
@@ -93,9 +90,9 @@
             </section>
 
             <!-- PROJETO 2: Eventos -->
-            <section id="section-proj-2" class="content-section d-none" aria-labelledby="p2-title">
+            <section id="section-proj-2" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 id="p2-title" class="h4 mb-0">Eventos</h2>
+                    <h2 class="h4 mb-0">Eventos</h2>
                     <span class="text-muted small">6 imagens</span>
                 </div>
                 <div class="masonry" data-gallery="proj-2">
@@ -121,9 +118,9 @@
             </section>
 
             <!-- PROJETO 3: Paisagens -->
-            <section id="section-proj-3" class="content-section d-none" aria-labelledby="p3-title">
+            <section id="section-proj-3" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 id="p3-title" class="h4 mb-0">Paisagens</h2>
+                    <h2 class="h4 mb-0">Paisagens</h2>
                     <span class="text-muted small">6 imagens</span>
                 </div>
                 <div class="masonry" data-gallery="proj-3">
@@ -149,8 +146,8 @@
             </section>
 
             <!-- CONTATO -->
-            <section id="section-contato" class="content-section d-none" aria-labelledby="contato-title">
-                <h2 id="contato-title" class="h4 mb-3">Contato</h2>
+            <section id="section-contato" class="content-section d-none">
+                <h2 class="h4 mb-3">Contato</h2>
                 <p class="text-muted">Preencha o formulário para solicitar um orçamento ou conversar sobre um projeto.
                 </p>
                 <form class="row g-3" action="#" method="post">
@@ -174,7 +171,7 @@
         </main>
     </div>
 
-    <!-- Lightbox (modal simples) -->
+    <!-- Lightbox -->
     <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-sm-down modal-xl modal-dialog-centered">
             <div class="modal-content bg-black">

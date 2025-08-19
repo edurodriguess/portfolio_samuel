@@ -2,7 +2,24 @@
 const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 
-// Troca de seções (um ativo por vez)
+const sidebar = $(".sidebar-inner");
+const toggleBtn = $("#toggleSidebar");
+const content = $(".content");
+
+let sidebarOpen = true;
+
+toggleBtn.addEventListener("click", () => {
+    sidebarOpen = !sidebarOpen;
+    if (sidebarOpen) {
+        sidebar.classList.remove("collapsed");
+        content.classList.remove("menu-collapsed");
+    } else {
+        sidebar.classList.add("collapsed");
+        content.classList.add("menu-collapsed");
+    }
+});
+
+// Troca de seções
 function showSection(targetSelector) {
     $$(".content-section").forEach((sec) => {
         sec.classList.add("d-none");
@@ -13,11 +30,10 @@ function showSection(targetSelector) {
         target.classList.remove("d-none");
         target.classList.add("active");
     }
-    // rola para o topo do conteúdo após troca
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
-// Bind menu (apenas navegação, sem colapsar subitens)
+// Menu navegação
 $$("[data-section-target]").forEach((btn) => {
     btn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -50,7 +66,7 @@ $("#nextBtn").addEventListener("click", () => {
     updateLightbox();
 });
 
-// Clique nas imagens (por galeria/seção)
+// Clique nas imagens
 $$(".masonry").forEach((gallery) => {
     const imgs = $$("img.masonry-item, .masonry-item", gallery);
     imgs.forEach((img, idx) => {
@@ -58,7 +74,7 @@ $$(".masonry").forEach((gallery) => {
     });
 });
 
-// Defesa extra contra qualquer overflow acidental
+// Overflow extra
 addEventListener("load", () => {
     document.documentElement.style.overflowX = "hidden";
     document.body.style.overflowX = "hidden";
