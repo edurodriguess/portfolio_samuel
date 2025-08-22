@@ -1,127 +1,288 @@
-/* Reset e scroll */
-html,
+/* RESET */
+/* Importando as fontes do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap");
+
+/* Estilo global */
 body {
-    max-width: 100%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a4a4a; /* cinza escuro para texto */
+    background-color: #f5f5f5; /* fundo claro */
+    margin: 0;
+    padding: 0;
 }
 
-:root {
-    --sidebar-width: 280px;
-    --gap: 1rem;
+/* Títulos principais */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Playfair Display", serif;
+    font-weight: 700;
+    color: #2d2d2d; /* preto suave */
+    margin-bottom: 0.5em;
 }
 
-body {
-    background-color: #f7f7f7;
-    padding-top: 56px; /* espaço para navbar fixa */
+/* Subtítulos ou destaques menores */
+h3,
+h4 {
+    font-weight: 600;
+    color: #333333;
 }
 
-/* Navbar fixa */
+/* Texto normal */
+p,
+li,
+span {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    color: #4a4a4a;
+}
+
+/* Links e botões de destaque */
+a,
+button {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    text-decoration: none;
+    color: #2d6a8a; /* azul petróleo */
+    transition: color 0.3s ease;
+}
+
+a:hover,
+button:hover {
+    color: #e63946; /* vermelho coral ao passar o mouse */
+}
+
+/* NAVBAR FIXA */
 .navbar {
+    z-index: 1100;
+    background: #fff;
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+}
+
+/* SIDEBAR */
+#sidebar {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    top: 56px; /* altura da navbar */
+    left: -280px; /* escondido inicialmente */
+    width: 280px;
+    height: calc(100vh - 56px);
+    background: #fff;
+    border-right: 1px solid #ddd;
+    transition: left 0.35s ease; /* deslizamento suave */
     z-index: 1050;
 }
 
-/* Marca simples */
-.logo {
-    width: 36px;
-    height: 36px;
-    border: 2px solid #111;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    font-weight: 700;
-}
-
-/* Sidebar fixo abaixo da navbar */
-.sidebar-inner {
-    position: fixed;
-    top: 56px; /* altura da navbar */
+#sidebar.active {
     left: 0;
-    width: var(--sidebar-width);
-    height: calc(100vh - 56px);
-    background-color: #fff;
-    border-right: 1px solid #ddd;
+}
+
+.sidebar-inner nav {
+    height: 100%;
     overflow-y: auto;
-    transition: transform 0.35s ease;
+    padding-bottom: 2rem;
 }
 
-/* Collapsed state */
-.sidebar-inner.collapsed {
-    transform: translateX(-100%);
+#sidebar.active ~ .content {
+    margin-left: 280px; /* mesma largura do sidebar */
 }
 
-/* Conteúdo */
+/* Submenu escondido */
+.submenu {
+    display: none;
+    margin-left: 1rem;
+    transition: all 0.3s ease;
+}
+
+/* Submenu ativo */
+.submenu.active {
+    display: block;
+}
+
+/* Estilo seta SVG */
+.arrow {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* Gira quando ativo */
+.toggle-submenu.active .arrow {
+    transform: rotate(180deg);
+}
+
+.btn-custom {
+    font-size: 22px;
+    background: none;
+    border: none;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.frist-title {
+    font-weight: 600;
+}
+
+/* CONTEÚDO */
 .content {
     flex: 1;
-    min-height: calc(100vh - 56px);
-    padding: 1.5rem;
-    margin-left: var(--sidebar-width);
-    transition: margin-left 0.35s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Ajuste quando menu colapsado */
-.content.menu-collapsed {
-    margin-left: 0;
-}
-
-/* Links do menu */
-.nav-link-like {
-    padding: 0.25rem 0;
-    color: #0d6efd;
-    text-decoration: none;
-}
-.nav-link-like:hover {
-    text-decoration: underline;
-}
-
-/* Seções */
-.content-section {
+    padding: 80px 20px 40px;
     width: 100%;
-    max-width: 1200px;
-    min-height: 70vh;
-    transition: opacity 0.3s ease;
+    transition: margin-left 0.35s ease;
 }
+
+.content-section {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.35s ease, transform 0.35s ease; /* fade-in suave */
+    display: none;
+}
+
 .content-section.active {
+    opacity: 1;
+    transform: translateY(0);
     display: block !important;
 }
 
-/* Masonry */
-.masonry {
-    column-width: 320px;
-    column-gap: var(--gap);
+/* LIGHTBOX */
+#lightboxModal .modal-body {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
 }
+
+#lightboxImage {
+    max-height: 70vh;
+    width: auto;
+    object-fit: contain;
+}
+
+.modal-content {
+    border: none;
+}
+
+/* Esconde o botão X */
+#lightboxModal .modal-header {
+    display: none;
+}
+
+/* Botões de navegação fixos */
+#prevBtn,
+#nextBtn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2000;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+#prevBtn {
+    left: 20px;
+}
+#nextBtn {
+    right: 20px;
+}
+
+/* MASONRY */
+.masonry {
+    column-count: 3;
+    column-gap: 1rem;
+}
+
 .masonry-item {
     width: 100%;
-    display: inline-block;
-    margin: 0 0 var(--gap);
-    border-radius: 0.5rem;
-    cursor: zoom-in;
-    filter: saturate(1.05) contrast(1.02);
-    transition: filter 0.25s ease;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
+
 .masonry-item:hover {
-    filter: saturate(1.15) contrast(1.05);
+    transform: scale(1.02);
 }
-.masonry img,
-.masonry-item {
-    max-width: 100%;
-    height: auto;
+
+/* Seção inicial centralizada */
+.content.home-padding-reset {
+    padding: 0;
+}
+
+.home-wrapper {
+    height: calc(100vh - 56px); /* altura da tela menos navbar */
+    display: flex;
+    justify-content: center; /* horizontal */
+    align-items: center; /* vertical */
+}
+
+/* Efeito fade-in para a home */
+.home-wrapper > div {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.home-wrapper.visible > div {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Cursor de digitação para o nome */
+#intro-name::after {
+    content: "|";
+    margin-left: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .masonry {
+        column-count: 2;
+    }
+    #sidebar {
+        width: 240px;
+    }
+}
+
+@media (max-width: 576px) {
+    .masonry {
+        column-count: 1;
+    }
+    #sidebar {
+        width: 220px;
+    }
 }
 
 @media (max-width: 768px) {
-    .sidebar-inner {
-        top: 56px;
-        height: calc(100vh - 56px);
-        z-index: 1040;
+    #sidebar.active ~ .content {
+        margin-left: 240px;
     }
-    .content {
-        margin-left: 0;
+}
+
+@media (max-width: 576px) {
+    #sidebar.active ~ .content {
+        margin-left: 220px;
     }
 }

@@ -12,7 +12,7 @@
 
 <body>
     <!-- Topbar fixa -->
-    <nav class="navbar navbar-light bg-light border-bottom fixed-top">
+    <nav class="navbar border-bottom fixed-top">
         <div class="container-fluid">
             <button id="toggleSidebar" class="btn btn-outline-dark">
                 <i class="bi bi-list"></i>
@@ -27,25 +27,32 @@
     <!-- Layout: sidebar + conteúdo -->
     <div class="layout d-flex">
         <!-- Sidebar -->
-        <aside id="sidebar" class="sidebar-inner bg-white border-end vh-100">
+        <aside id="sidebar" class="sidebar-inner bg-white border-end vh-100 active">
             <nav>
                 <ul class="nav flex-column p-4">
-                    <li class="nav-item mb-2">
-                        <button class="btn btn-link nav-link-like" data-section-target="#section-home">Home</button>
+                    <li class="nav-item mb-3 mt-4">
+                        <button class="p-0 btn-custom frist-title" data-section-target="#section-home">Início</button>
                     </li>
-                    <li class="nav-item mb-2">
-                        <span class="text-uppercase fw-semibold small text-muted">Projetos</span>
-                        <ul class="list-unstyled ms-2 mt-2">
-                            <li><button class="btn btn-link nav-link-like"
-                                    data-section-target="#section-proj-1">Retratos</button></li>
-                            <li><button class="btn btn-link nav-link-like"
-                                    data-section-target="#section-proj-2">Eventos</button></li>
-                            <li><button class="btn btn-link nav-link-like"
-                                    data-section-target="#section-proj-3">Paisagens</button></li>
+                    <li class="nav-item mb-3">
+                        <button class="p-0 btn-custom frist-title toggle-submenu active">
+                            Projetos
+                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </button>
+                        <ul class="list-unstyled ms-2 mt-3 submenu active">
+                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-1">Kayblack</button>
+                            </li>
+                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-2">Djonga</button>
+                            </li>
+                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-3">Yunk Vino</button>
+                            </li>
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-link nav-link-like"
+                        <button class="p-0 btn-custom frist-title"
                             data-section-target="#section-contato">Contato</button>
                     </li>
                 </ul>
@@ -56,16 +63,19 @@
         <main class="content flex-fill">
             <!-- HOME -->
             <section id="section-home" class="content-section active">
-                <h1 class="h3 mb-3">Bem-vindo ao meu portfólio</h1>
-                <p class="text-secondary">Seleção curada de trabalhos recentes organizados por projetos. Clique em
-                    qualquer imagem para ver em tela cheia e navegar entre as fotos da mesma galeria.</p>
+                <div class="home-wrapper d-flex justify-content-center align-items-center">
+                    <div class="text-center">
+                        <h1 class="display-1 fw-bold mb-3" id="intro-name"></h1>
+                        <p class="lead text-secondary">Fotografia que conta histórias</p>
+                    </div>
+                </div>
             </section>
 
-            <!-- PROJETO 1: Retratos -->
+            <!-- PROJETO 1: Kayblack -->
             <section id="section-proj-1" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h4 mb-0">Retratos</h2>
-                    <span class="text-muted small">6 imagens</span>
+                    <h2 class="mb-0 fw-bold h1">Kayblack</h2>
+                    <span class="text-muted small">10 imagens</span>
                 </div>
                 <div class="masonry" data-gallery="proj-1">
                     <img class="masonry-item"
@@ -89,10 +99,10 @@
                 </div>
             </section>
 
-            <!-- PROJETO 2: Eventos -->
+            <!-- PROJETO 2: Djonga -->
             <section id="section-proj-2" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h4 mb-0">Eventos</h2>
+                    <h2 class="h4 mb-0">Djonga</h2>
                     <span class="text-muted small">6 imagens</span>
                 </div>
                 <div class="masonry" data-gallery="proj-2">
@@ -117,10 +127,10 @@
                 </div>
             </section>
 
-            <!-- PROJETO 3: Paisagens -->
+            <!-- PROJETO 3: Yunk Vino -->
             <section id="section-proj-3" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h4 mb-0">Paisagens</h2>
+                    <h2 class="h4 mb-0">Yunk Vino</h2>
                     <span class="text-muted small">6 imagens</span>
                 </div>
                 <div class="masonry" data-gallery="proj-3">
@@ -147,26 +157,32 @@
 
             <!-- CONTATO -->
             <section id="section-contato" class="content-section d-none">
-                <h2 class="h4 mb-3">Contato</h2>
-                <p class="text-muted">Preencha o formulário para solicitar um orçamento ou conversar sobre um projeto.
-                </p>
-                <form class="row g-3" action="#" method="post">
-                    <div class="col-md-6">
-                        <label class="form-label">Nome</label>
-                        <input type="text" class="form-control" placeholder="Seu nome" required>
+                <div class="row justify-content-center">
+                    <div class="col-10">
+                        <h2 class="h4 mb-3">Contato</h2>
+                        <p class="text-muted">
+                            Preencha o formulário para solicitar um orçamento ou conversar sobre um projeto.
+                        </p>
+                        <form class="row g-3" action="#" method="post">
+                            <div class="col-md-6">
+                                <label class="form-label">Nome</label>
+                                <input type="text" class="form-control" placeholder="Seu nome" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label">E-mail</label>
+                                <input type="email" class="form-control" placeholder="voce@email.com" required>
+                            </div>
+                            <div class="col-12">
+                                <label class="form-label">Mensagem</label>
+                                <textarea class="form-control" rows="5" placeholder="Escreva sua mensagem"
+                                    required></textarea>
+                            </div>
+                            <div class="col-12">
+                                <button class="btn btn-dark">Enviar</button>
+                            </div>
+                        </form>
                     </div>
-                    <div class="col-md-6">
-                        <label class="form-label">E-mail</label>
-                        <input type="email" class="form-control" placeholder="voce@email.com" required>
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label">Mensagem</label>
-                        <textarea class="form-control" rows="5" placeholder="Escreva sua mensagem" required></textarea>
-                    </div>
-                    <div class="col-12">
-                        <button class="btn btn-dark">Enviar</button>
-                    </div>
-                </form>
+                </div>
             </section>
         </main>
     </div>
@@ -174,7 +190,7 @@
     <!-- Lightbox -->
     <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-sm-down modal-xl modal-dialog-centered">
-            <div class="modal-content bg-black">
+            <div class="modal-content bg-transparent">
                 <div class="modal-header border-0">
                     <button type="button" class="btn btn-light" data-bs-dismiss="modal" aria-label="Fechar"><i
                             class="bi bi-x-lg"></i></button>
@@ -184,9 +200,8 @@
                 </div>
                 <div class="modal-footer border-0 justify-content-between">
                     <button id="prevBtn" class="btn btn-outline-light"><i class="bi bi-chevron-left"></i>
-                        Anterior</button>
-                    <button id="nextBtn" class="btn btn-outline-light">Próxima <i
-                            class="bi bi-chevron-right"></i></button>
+                    </button>
+                    <button id="nextBtn" class="btn btn-outline-light"> <i class="bi bi-chevron-right"></i></button>
                 </div>
             </div>
         </div>
