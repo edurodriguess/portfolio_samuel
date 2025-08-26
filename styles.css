@@ -140,8 +140,8 @@ button:hover {
 
 .content-section {
     opacity: 0;
-    transform: translateY(10px);
-    transition: opacity 0.35s ease, transform 0.35s ease; /* fade-in suave */
+    transform: translateY(15px);
+    transition: opacity 0.6s ease, transform 0.6s ease; /* fade-in suave */
     display: none;
 }
 
@@ -158,6 +158,10 @@ button:hover {
     align-items: center;
     justify-content: center;
     height: 100%;
+}
+
+#lightboxModal {
+    background: rgba(0, 0, 0, 0.68);
 }
 
 #lightboxImage {
@@ -206,7 +210,14 @@ button:hover {
     margin-bottom: 1rem;
     border-radius: 8px;
     cursor: pointer;
-    transition: transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.masonry-item.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .masonry-item:hover {

@@ -15,13 +15,18 @@ $("#toggleSidebar").addEventListener("click", () => {
 $$("[data-section-target]").forEach((btn) => {
     btn.addEventListener("click", () => {
         const target = btn.getAttribute("data-section-target");
+
+        // esconde todas com fade-out
         $$(".content-section").forEach((sec) => {
-            sec.classList.remove("active");
-            setTimeout(() => sec.classList.add("d-none"), 350); // espera fade-out
+            sec.classList.remove("active"); // inicia fade-out
+            setTimeout(() => sec.classList.add("d-none"), 350); // espera a transição
         });
+
+        // mostra a seção alvo com fade-in
         const section = $(target);
         section.classList.remove("d-none");
         setTimeout(() => section.classList.add("active"), 10);
+
         window.scrollTo({ top: 0, behavior: "smooth" });
     });
 });
