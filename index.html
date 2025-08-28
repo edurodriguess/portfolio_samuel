@@ -13,16 +13,17 @@
 <body>
     <!-- Topbar fixa -->
     <nav class="navbar border-bottom fixed-top">
-        <div class="container-fluid">
+        <div class="container-fluid d-flex align-items-center">
             <button id="toggleSidebar" class="btn btn-outline-dark">
                 <i class="bi bi-list"></i>
             </button>
-            <div class="brand d-flex align-items-center m-1">
+            <div class="brand d-flex align-items-center m-1 ms-auto">
                 <div class="logo me-2">S.</div>
-                <strong>Sarmento</strong>
+                <strong class="logo2">Sarmento</strong>
             </div>
         </div>
     </nav>
+
 
     <!-- Layout: sidebar + conteúdo -->
     <div class="layout d-flex">
@@ -31,7 +32,8 @@
             <nav>
                 <ul class="nav flex-column p-4">
                     <li class="nav-item mb-3 mt-4">
-                        <button class="p-0 btn-custom frist-title" data-section-target="#section-home">Início</button>
+                        <button class="p-0 btn-custom frist-title" data-section-target="#section-home">Sobre
+                            Mim</button>
                     </li>
                     <li class="nav-item mb-3">
                         <button class="p-0 btn-custom frist-title toggle-submenu active">
@@ -43,22 +45,22 @@
                             </svg>
                         </button>
                         <ul class="list-unstyled ms-2 mt-3 submenu active">
-                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-1">Kayblack</button>
+                            <li><button class="btn-custom" data-section-target="#section-proj-1">Kayblack</button>
                             </li>
-                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-2">Djonga</button>
+                            <li><button class="btn-custom" data-section-target="#section-proj-2">Djonga</button>
                             </li>
-                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-3">Brool</button>
+                            <li><button class="btn-custom" data-section-target="#section-proj-3">Brool</button>
                             </li>
-                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-4">Major RD</button>
+                            <li><button class="btn-custom" data-section-target="#section-proj-4">Major RD</button>
                             </li>
-                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-5">Ryu the
+                            <li><button class="btn-custom" data-section-target="#section-proj-5">Ryu the
                                     Runner</button>
                             </li>
-                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-6">Duquesa</button>
+                            <li><button class="btn-custom" data-section-target="#section-proj-6">Duquesa</button>
                             </li>
-                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-7">Veigh</button>
+                            <li><button class="btn-custom" data-section-target="#section-proj-7">Veigh</button>
                             </li>
-                            <li><button class="btn-custom mb-2" data-section-target="#section-proj-8">Cabelinho</button>
+                            <li><button class="btn-custom" data-section-target="#section-proj-8">Cabelinho</button>
                             </li>
                         </ul>
                     </li>
@@ -73,7 +75,7 @@
         <!-- Conteúdo -->
         <main class="content flex-fill">
             <!-- HOME -->
-            <section id="section-home" class="content-section active">
+            <section id="section-home" class="content-section d-none">
                 <div class="home-wrapper d-flex justify-content-center align-items-center">
                     <div class="text-center">
                         <h1 class="display-1 fw-bold mb-3" id="intro-name"></h1>
@@ -83,7 +85,7 @@
             </section>
 
             <!-- PROJETO 1: Kayblack -->
-            <section id="section-proj-1" class="content-section d-none">
+            <section id="section-proj-1" class="content-section active">
                 <div class="d-flex align-items-center justify-content-between mb-3">
                     <h2 class="mb-0 fw-bold h1">Kayblack</h2>
                     <span class="text-muted small">10 imagens</span>
