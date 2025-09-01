@@ -1,14 +1,14 @@
 /* RESET */
-/* Importando as fontes do Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&family=Playfair+Display:wght@400;600;700&display=swap");
+/* Importando a nova fonte do Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap");
 
 /* Estilo global */
 body {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Source Sans 3", sans-serif;
     font-size: 12px;
     line-height: 1.4;
-    color: #4a4a4a; /* cinza escuro para texto */
-    background-color: #f5f5f5; /* fundo claro */
+    color: #000; /* cinza escuro para texto */
+    background-color: #efede9; /* fundo claro */
     margin: 0;
     padding: 0;
 }
@@ -20,7 +20,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Playfair Display", serif;
+    font-family: "Source Sans 3", sans-serif;
     font-weight: 700;
     color: #2d2d2d; /* preto suave */
     margin-bottom: 0.5em;
@@ -37,7 +37,7 @@ h4 {
 p,
 li,
 span {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Source Sans 3", sans-serif;
     font-weight: 400;
     color: #4a4a4a;
 }
@@ -45,7 +45,7 @@ span {
 /* Links e botões de destaque */
 a,
 button {
-    font-family: "Montserrat", sans-serif;
+    font-family: "Source Sans 3", sans-serif;
     font-weight: 500;
     text-decoration: none;
     color: #2d6a8a; /* azul petróleo */
@@ -57,16 +57,33 @@ button:hover {
     color: #e63946; /* vermelho coral ao passar o mouse */
 }
 
-.logo,
-.logo2 {
-    font-size: 16px;
+a:hover,
+button:focus {
+    color: #e63946;
+}
+
+.logo-main {
+    font-size: 1.2rem; /* maior */
+    font-weight: 700;
+    color: #111;
+}
+
+.logo-sub {
+    font-size: 1.2rem; /* menor */
+    font-weight: 400;
+    color: #555;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #666;
 }
 
 /* NAVBAR FIXA */
 .navbar {
-    z-index: 1100;
-    background: #fff;
-    min-height: 58px;
+    background: #efede9;
+    min-height: 38px;
 }
 
 /* LAYOUT */
@@ -77,12 +94,11 @@ button:hover {
 /* SIDEBAR */
 #sidebar {
     position: fixed;
-    top: 56px; /* altura da navbar */
+    top: 37px; /* altura da navbar */
     left: 0; /* sempre visível em desktop */
     width: 280px;
     height: calc(100vh - 56px);
-    background: #fff;
-    border-right: 1px solid #ddd;
+    background: #efede9;
     z-index: 1050;
     transition: left 0.35s ease;
 }
@@ -130,6 +146,7 @@ button:hover {
     border: none;
     padding: 15px;
     margin-bottom: 15px;
+    color: #000;
 }
 
 .frist-title {

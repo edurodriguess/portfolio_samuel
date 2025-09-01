@@ -12,69 +12,60 @@
 
 <body>
     <!-- Topbar fixa -->
-    <nav class="navbar border-bottom fixed-top">
+    <nav class="navbar fixed-top">
         <div class="container-fluid d-flex align-items-center">
             <button id="toggleSidebar" class="btn btn-outline-dark">
                 <i class="bi bi-list"></i>
             </button>
-            <div class="brand d-flex align-items-center m-1 ms-auto">
-                <div class="logo me-2">S.</div>
-                <strong class="logo2">Sarmento</strong>
-            </div>
+
         </div>
     </nav>
 
 
     <!-- Layout: sidebar + conteúdo -->
     <div class="layout d-flex">
-        <!-- Sidebar -->
-        <aside id="sidebar" class="sidebar-inner bg-white border-end vh-100 active">
-            <nav>
+        <aside id="sidebar" class="sidebar-inner vh-100 d-flex flex-column">
+
+            <!-- LOGO CENTRALIZADA -->
+            <div class="brand text-center my-3 mt-5">
+                <a href="#" class="logo-link" data-section-target="#section-principais">
+                    <span class="logo-main">samsarmento</span><span class="logo-sub"> ®</span>
+                </a>
+            </div>
+
+
+            <!-- MENU -->
+            <nav class="flex-grow-1 mt-5">
                 <ul class="nav flex-column p-4">
-                    <li class="nav-item mb-3 mt-4">
-                        <button class="p-0 btn-custom frist-title" data-section-target="#section-home">Sobre
-                            Mim</button>
+                    <li class="nav-item"><button class="btn-custom"
+                            data-section-target="#section-proj-1">kayblack</button></li>
+                    <li class="nav-item"><button class="btn-custom"
+                            data-section-target="#section-proj-2">duquesa</button></li>
+                    <li class="nav-item"><button class="btn-custom" data-section-target="#section-proj-3">ryu the
+                            runner</button></li>
+                    <li class="nav-item"><button class="btn-custom" data-section-target="#section-proj-4">yan
+                            cantor</button></li>
+                    <li class="nav-item"><button class="btn-custom" data-section-target="#section-proj-5">wiu</button>
                     </li>
-                    <li class="nav-item mb-3">
-                        <button class="p-0 btn-custom frist-title toggle-submenu active">
-                            Projetos
-                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="14" height="14"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </button>
-                        <ul class="list-unstyled ms-2 mt-3 submenu active">
-                            <li><button class="btn-custom" data-section-target="#section-proj-1">Kayblack</button>
-                            </li>
-                            <li><button class="btn-custom" data-section-target="#section-proj-2">Djonga</button>
-                            </li>
-                            <li><button class="btn-custom" data-section-target="#section-proj-3">Brool</button>
-                            </li>
-                            <li><button class="btn-custom" data-section-target="#section-proj-4">Major RD</button>
-                            </li>
-                            <li><button class="btn-custom" data-section-target="#section-proj-5">Ryu the
-                                    Runner</button>
-                            </li>
-                            <li><button class="btn-custom" data-section-target="#section-proj-6">Duquesa</button>
-                            </li>
-                            <li><button class="btn-custom" data-section-target="#section-proj-7">Veigh</button>
-                            </li>
-                            <li><button class="btn-custom" data-section-target="#section-proj-8">Cabelinho</button>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <button class="p-0 btn-custom frist-title"
-                            data-section-target="#section-contato">Contato</button>
+                    <li class="nav-item"><button class="btn-custom" data-section-target="#section-proj-6">meskla
+                            festival</button></li>
+
+                    <li class="nav-item mt-5">
+                        <button class="btn-custom" data-section-target="#section-home">sobre mim</button>
                     </li>
                 </ul>
             </nav>
+
+            <!-- RODAPÉ FIXO -->
+            <div class="footer-text text-center mb-5">
+                <p class="text-black">lucas 10:19</p>
+            </div>
         </aside>
+
 
         <!-- Conteúdo -->
         <main class="content flex-fill">
-            <!-- HOME -->
+            <!-- SOBRE MIM -->
             <section id="section-home" class="content-section d-none">
                 <div class="home-wrapper d-flex justify-content-center align-items-center">
                     <div class="text-center">
@@ -85,10 +76,9 @@
             </section>
 
             <!-- PROJETO 1: Kayblack -->
-            <section id="section-proj-1" class="content-section active">
+            <section id="section-proj-1" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="mb-0 fw-bold h1">Kayblack</h2>
-                    <span class="text-muted small">10 imagens</span>
+                    <h3 class="mb-0 fw-bold">kayblack</h3>
                 </div>
                 <div class="masonry" data-gallery="proj-1">
                     <img class="masonry-item" src="imagens/projeto 1/SRM-227.jpg" alt="Retrato 1" />
@@ -104,55 +94,45 @@
                 </div>
             </section>
 
-            <!-- PROJETO 2: Djonga -->
+            <!-- PROJETO 2: Duquesa -->
             <section id="section-proj-2" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h1 fw-bold mb-0">Djonga</h2>
-                    <span class="text-muted small">10 imagens</span>
+                    <h3 class="fw-bold mb-0">duquesa</h3>
                 </div>
                 <div class="masonry" data-gallery="proj-2">
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-214.jpg" alt="Djonga 1" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-215.jpg" alt="Djonga 2" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-216.jpg" alt="Djonga 3" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-217.jpg" alt="Djonga 4" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-219.jpg" alt="Djonga 5" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-220.jpg" alt="Djonga 6" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-222.jpg" alt="Djonga 7" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-223.jpg" alt="Djonga 8" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-224.jpg" alt="Djonga 9" />
-                    <img class="masonry-item" src="imagens/projeto 2/SRM-284.jpg" alt="Djonga 10" />
+                    <img class="masonry-item" src="imagens/projeto 2/SRM-136.jpg" alt="projeto 2 - Imagem 1" />
+                    <img class="masonry-item" src="imagens/projeto 2/SRM-138.jpg" alt="projeto 2 - Imagem 2" />
+                    <img class="masonry-item" src="imagens/projeto 2/SRM-139.jpg" alt="projeto 2 - Imagem 3" />
+                    <img class="masonry-item" src="imagens/projeto 2/SRM-140.jpg" alt="projeto 2 - Imagem 4" />
+                    <img class="masonry-item" src="imagens/projeto 2/SRM-141.jpg" alt="projeto 2 - Imagem 5" />
+                    <img class="masonry-item" src="imagens/projeto 2/SRM-142.jpg" alt="projeto 2 - Imagem 6" />
+                    <img class="masonry-item" src="imagens/projeto 2/SRM-146.jpg" alt="projeto 2 - Imagem 7" />
+                    <img class="masonry-item" src="imagens/projeto 2/SRM-147.jpg" alt="projeto 2 - Imagem 8" />
                 </div>
             </section>
 
-            <!-- PROJETO 3: Brool -->
+            <!-- PROJETO 3: Ryu the Runner -->
             <section id="section-proj-3" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h1 fw-bold mb-0">Brool</h2>
-                    <span class="text-muted small">12 imagens</span>
+                    <h3 class="fw-bold mb-0">ryu the runner</h3>
                 </div>
                 <div class="masonry" data-gallery="proj-3">
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-125.jpg" alt="Projeto 3 - Imagem 1" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-128.jpg" alt="Projeto 3 - Imagem 2" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-130.jpg" alt="Projeto 3 - Imagem 3" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-131.jpg" alt="Projeto 3 - Imagem 4" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-132.jpg" alt="Projeto 3 - Imagem 5" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-133.jpg" alt="Projeto 3 - Imagem 6" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-134.jpg" alt="Projeto 3 - Imagem 7" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-135.jpg" alt="Projeto 3 - Imagem 8" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-157.jpg" alt="Projeto 3 - Imagem 9" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-272.jpg" alt="Projeto 3 - Imagem 10" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-273.jpg" alt="Projeto 3 - Imagem 11" />
-                    <img class="masonry-item" src="imagens/projeto 3/SRM-285.jpg" alt="Projeto 3 - Imagem 12" />
-                </div>
+                    <img class="masonry-item" src="imagens/projeto 3/SRM-257.jpg" alt="projeto 3 - Imagem 1" />
+                    <img class="masonry-item" src="imagens/projeto 3/SRM-259.jpg" alt="projeto 3 - Imagem 2" />
+                    <img class="masonry-item" src="imagens/projeto 3/SRM-260.jpg" alt="projeto 3 - Imagem 3" />
+                    <img class="masonry-item" src="imagens/projeto 3/SRM-264.jpg" alt="projeto 3 - Imagem 4" />
+                    <img class="masonry-item" src="imagens/projeto 3/SRM-266.jpg" alt="projeto 3 - Imagem 5" />
+                    <img class="masonry-item" src="imagens/projeto 3/SRM-268.jpg" alt="projeto 3 - Imagem 6" />
+                    <img class="masonry-item" src="imagens/projeto 3/SRM-269.jpg" alt="projeto 3 - Imagem 7" />
+                    <img class="masonry-item" src="imagens/projeto 3/SRM-270.jpg" alt="projeto 3 - Imagem 8" />
             </section>
 
-            <!-- PROJETO 4: Major RD -->
+            <!-- PROJETO 4: yan cantor -->
             <section id="section-proj-4" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h1 fw-bold mb-0">Major RD</h2>
-                    <span class="text-muted small">10 imagens</span>
+                    <h3 class="fw-bold mb-0">yan cantor</h3>
                 </div>
-                <div class="masonry" data-gallery="proj-3">
+                <div class="masonry" data-gallery="proj-4">
                     <img class="masonry-item" src="imagens/projeto 4/SRM-261.jpg" alt="Projeto 4 - Imagem 1" />
                     <img class="masonry-item" src="imagens/projeto 4/SRM-262.jpg" alt="Projeto 4 - Imagem 2" />
                     <img class="masonry-item" src="imagens/projeto 4/SRM-265.jpg" alt="Projeto 4 - Imagem 3" />
@@ -166,111 +146,62 @@
                 </div>
             </section>
 
-            <!-- PROJETO 5: Ryu the Runner -->
+            <!-- PROJETO 5: wiu -->
             <section id="section-proj-5" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h1 fw-bold mb-0">Ryu the Runner</h2>
-                    <span class="text-muted small">8 imagens</span>
+                    <h3 class="fw-bold mb-0">wiu</h3>
                 </div>
-                <div class="masonry" data-gallery="proj-3">
-                    <img class="masonry-item" src="imagens/projeto 5/SRM-257.jpg" alt="Projeto 5 - Imagem 1" />
-                    <img class="masonry-item" src="imagens/projeto 5/SRM-259.jpg" alt="Projeto 5 - Imagem 2" />
-                    <img class="masonry-item" src="imagens/projeto 5/SRM-260.jpg" alt="Projeto 5 - Imagem 3" />
-                    <img class="masonry-item" src="imagens/projeto 5/SRM-264.jpg" alt="Projeto 5 - Imagem 4" />
-                    <img class="masonry-item" src="imagens/projeto 5/SRM-266.jpg" alt="Projeto 5 - Imagem 5" />
-                    <img class="masonry-item" src="imagens/projeto 5/SRM-268.jpg" alt="Projeto 5 - Imagem 6" />
-                    <img class="masonry-item" src="imagens/projeto 5/SRM-269.jpg" alt="Projeto 5 - Imagem 7" />
-                    <img class="masonry-item" src="imagens/projeto 5/SRM-270.jpg" alt="Projeto 5 - Imagem 8" />
+                <div class="masonry" data-gallery="proj-5">
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-194.jpg" alt="projeto 5 - Imagem 1" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-195.jpg" alt="projeto 5 - Imagem 2" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-196.jpg" alt="projeto 5 - Imagem 3" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-197.jpg" alt="projeto 5 - Imagem 4" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-198.jpg" alt="projeto 5 - Imagem 5" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-199.jpg" alt="projeto 5 - Imagem 6" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-200.jpg" alt="projeto 5 - Imagem 7" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-201.jpg" alt="projeto 5 - Imagem 8" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-202.jpg" alt="projeto 5 - Imagem 9" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-204.jpg" alt="projeto 5 - Imagem 10" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-205.jpg" alt="projeto 5 - Imagem 11" />
+                    <img class="masonry-item" src="imagens/projeto 5/SRM-208.jpg" alt="projeto 5 - Imagem 12" />
             </section>
 
-            <!-- PROJETO 6: Duquesa -->
+            <!-- PROJETO 6: meskla festival -->
             <section id="section-proj-6" class="content-section d-none">
                 <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h1 fw-bold mb-0">Duquesa</h2>
-                    <span class="text-muted small">8 imagens</span>
+                    <h3 class="fw-bold mb-0">meskla festival</h3>
                 </div>
-                <div class="masonry" data-gallery="proj-3">
-                    <img class="masonry-item" src="imagens/projeto 6/SRM-136.jpg" alt="Projeto 6 - Imagem 1" />
-                    <img class="masonry-item" src="imagens/projeto 6/SRM-138.jpg" alt="Projeto 6 - Imagem 2" />
-                    <img class="masonry-item" src="imagens/projeto 6/SRM-139.jpg" alt="Projeto 6 - Imagem 3" />
-                    <img class="masonry-item" src="imagens/projeto 6/SRM-140.jpg" alt="Projeto 6 - Imagem 4" />
-                    <img class="masonry-item" src="imagens/projeto 6/SRM-141.jpg" alt="Projeto 6 - Imagem 5" />
-                    <img class="masonry-item" src="imagens/projeto 6/SRM-142.jpg" alt="Projeto 6 - Imagem 6" />
-                    <img class="masonry-item" src="imagens/projeto 6/SRM-146.jpg" alt="Projeto 6 - Imagem 7" />
-                    <img class="masonry-item" src="imagens/projeto 6/SRM-147.jpg" alt="Projeto 6 - Imagem 8" />
-                </div>
-            </section>
-
-            <!-- PROJETO 7: Veigh -->
-            <section id="section-proj-7" class="content-section d-none">
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h1 fw-bold mb-0">Veigh</h2>
-                    <span class="text-muted small">12 imagens</span>
-                </div>
-                <div class="masonry" data-gallery="proj-3">
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-194.jpg" alt="Projeto 7 - Imagem 1" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-195.jpg" alt="Projeto 7 - Imagem 2" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-196.jpg" alt="Projeto 7 - Imagem 3" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-197.jpg" alt="Projeto 7 - Imagem 4" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-198.jpg" alt="Projeto 7 - Imagem 5" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-199.jpg" alt="Projeto 7 - Imagem 6" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-200.jpg" alt="Projeto 7 - Imagem 7" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-201.jpg" alt="Projeto 7 - Imagem 8" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-202.jpg" alt="Projeto 7 - Imagem 9" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-204.jpg" alt="Projeto 7 - Imagem 10" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-205.jpg" alt="Projeto 7 - Imagem 11" />
-                    <img class="masonry-item" src="imagens/projeto 7/SRM-208.jpg" alt="Projeto 7 - Imagem 12" />
-            </section>
-
-            <!-- PROJETO 8: Cabelinho -->
-            <section id="section-proj-8" class="content-section d-none">
-                <div class="d-flex align-items-center justify-content-between mb-3">
-                    <h2 class="h1 fw-bold mb-0">Cabelinho</h2>
-                    <span class="text-muted small">12 imagens</span>
-                </div>
-                <div class="masonry" data-gallery="proj-3">
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-171.jpg" alt="Projeto 8 - Imagem 1" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-172.jpg" alt="Projeto 8 - Imagem 2" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-173.jpg" alt="Projeto 8 - Imagem 3" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-174.jpg" alt="Projeto 8 - Imagem 4" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-175.jpg" alt="Projeto 8 - Imagem 5" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-176.jpg" alt="Projeto 8 - Imagem 6" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-177.jpg" alt="Projeto 8 - Imagem 7" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-178.jpg" alt="Projeto 8 - Imagem 8" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-179.jpg" alt="Projeto 8 - Imagem 9" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-180.jpg" alt="Projeto 8 - Imagem 10" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-181.jpg" alt="Projeto 8 - Imagem 11" />
-                    <img class="masonry-item" src="imagens/projeto 8/SRM-182.jpg" alt="Projeto 8 - Imagem 12" />
+                <div class="masonry" data-gallery="proj-6">
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-171.jpg" alt="projeto 6 - Imagem 1" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-172.jpg" alt="projeto 6 - Imagem 2" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-173.jpg" alt="projeto 6 - Imagem 3" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-174.jpg" alt="projeto 6 - Imagem 4" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-175.jpg" alt="projeto 6 - Imagem 5" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-176.jpg" alt="projeto 6 - Imagem 6" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-177.jpg" alt="projeto 6 - Imagem 7" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-178.jpg" alt="projeto 6 - Imagem 8" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-179.jpg" alt="projeto 6 - Imagem 9" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-180.jpg" alt="projeto 6 - Imagem 10" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-181.jpg" alt="projeto 6 - Imagem 11" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-182.jpg" alt="projeto 6 - Imagem 12" />
                 </div>
             </section>
 
-            <!-- CONTATO -->
-            <section id="section-contato" class="content-section d-none">
-                <div class="row justify-content-center">
-                    <div class="col-10">
-                        <h2 class="h4 mb-3">Contato</h2>
-                        <p class="text-muted">
-                            Preencha o formulário para solicitar um orçamento ou conversar sobre um projeto.
-                        </p>
-                        <form class="row g-3" action="#" method="post">
-                            <div class="col-md-6">
-                                <label class="form-label">Nome</label>
-                                <input type="text" class="form-control" placeholder="Seu nome" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="form-label">E-mail</label>
-                                <input type="email" class="form-control" placeholder="voce@email.com" required>
-                            </div>
-                            <div class="col-12">
-                                <label class="form-label">Mensagem</label>
-                                <textarea class="form-control" rows="5" placeholder="Escreva sua mensagem"
-                                    required></textarea>
-                            </div>
-                            <div class="col-12">
-                                <button class="btn btn-dark">Enviar</button>
-                            </div>
-                        </form>
-                    </div>
+            <!-- PRINCIPAL -->
+            <section id="section-principais" class="content-section d-none active">
+                <div class="masonry" data-gallery="proj-6">
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-171.jpg" alt="projeto 6 - Imagem 1" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-172.jpg" alt="projeto 6 - Imagem 2" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-173.jpg" alt="projeto 6 - Imagem 3" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-174.jpg" alt="projeto 6 - Imagem 4" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-175.jpg" alt="projeto 6 - Imagem 5" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-176.jpg" alt="projeto 6 - Imagem 6" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-177.jpg" alt="projeto 6 - Imagem 7" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-178.jpg" alt="projeto 6 - Imagem 8" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-179.jpg" alt="projeto 6 - Imagem 9" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-180.jpg" alt="projeto 6 - Imagem 10" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-181.jpg" alt="projeto 6 - Imagem 11" />
+                    <img class="masonry-item" src="imagens/projeto 6/SRM-182.jpg" alt="projeto 6 - Imagem 12" />
                 </div>
             </section>
         </main>
