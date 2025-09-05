@@ -16,6 +16,12 @@ $$("[data-section-target]").forEach((btn) => {
     btn.addEventListener("click", () => {
         const target = btn.getAttribute("data-section-target");
 
+        // remove "active" de todos os botões
+        $$("[data-section-target]").forEach((b) => b.classList.remove("active"));
+
+        // adiciona "active" no botão clicado
+        btn.classList.add("active");
+
         // esconde todas com fade-out
         $$(".content-section").forEach((sec) => {
             sec.classList.remove("active"); // inicia fade-out

@@ -1,5 +1,4 @@
 /* RESET */
-/* Importando a nova fonte do Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&display=swap");
 
 /* Estilo global */
@@ -7,8 +6,8 @@ body {
     font-family: "Source Sans 3", sans-serif;
     font-size: 12px;
     line-height: 1.4;
-    color: #000; /* cinza escuro para texto */
-    background-color: #efede9; /* fundo claro */
+    color: #000;
+    background-color: #efede9;
     margin: 0;
     padding: 0;
 }
@@ -22,7 +21,7 @@ h5,
 h6 {
     font-family: "Source Sans 3", sans-serif;
     font-weight: 700;
-    color: #2d2d2d; /* preto suave */
+    color: #2d2d2d;
     margin-bottom: 0.5em;
 }
 
@@ -48,13 +47,13 @@ button {
     font-family: "Source Sans 3", sans-serif;
     font-weight: 500;
     text-decoration: none;
-    color: #2d6a8a; /* azul petróleo */
+    color: #2d6a8a;
     transition: color 0.3s ease;
 }
 
 a:hover,
 button:hover {
-    color: #e63946; /* vermelho coral ao passar o mouse */
+    color: #e63946;
 }
 
 a:hover,
@@ -63,13 +62,13 @@ button:focus {
 }
 
 .logo-main {
-    font-size: 1.2rem; /* maior */
+    font-size: 1.2rem;
     font-weight: 700;
     color: #111;
 }
 
 .logo-sub {
-    font-size: 1.2rem; /* menor */
+    font-size: 1.2rem;
     font-weight: 400;
     color: #555;
 }
@@ -94,8 +93,8 @@ button:focus {
 /* SIDEBAR */
 #sidebar {
     position: fixed;
-    top: 37px; /* altura da navbar */
-    left: 0; /* sempre visível em desktop */
+    top: 37px;
+    left: 0;
     width: 280px;
     height: calc(100vh - 56px);
     background: #efede9;
@@ -111,10 +110,23 @@ button:focus {
     height: 100%;
     overflow-y: auto;
     padding-bottom: 2rem;
+    padding-left: 2.5rem;
 }
 
 #sidebar.active ~ .content {
-    margin-left: 280px; /* mesma largura do sidebar */
+    margin-left: 280px;
+}
+
+/* Círculo antes do item ativo */
+.btn-custom.active::before {
+    content: "";
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #e63946; /* cor do círculo */
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 /* Submenu escondido */
@@ -144,8 +156,7 @@ button:focus {
     font-size: 16px;
     background: none;
     border: none;
-    padding: 15px;
-    margin-bottom: 15px;
+    padding: 10px;
     color: #000;
 }
 
@@ -156,7 +167,7 @@ button:focus {
 /* CONTEÚDO */
 .content {
     flex: 1;
-    padding: 80px 20px 40px;
+    padding: 0px 20px 40px;
     margin-left: 280px;
     transition: margin-left 0.35s ease;
 }
@@ -164,7 +175,7 @@ button:focus {
 .content-section {
     opacity: 0;
     transform: translateY(15px);
-    transition: opacity 0.6s ease, transform 0.6s ease; /* fade-in suave */
+    transition: opacity 0.6s ease, transform 0.6s ease;
     display: none;
 }
 
@@ -230,12 +241,12 @@ button:focus {
 /* MASONRY */
 .masonry {
     column-count: 4;
-    column-gap: 1rem;
+    column-gap: 0.2rem;
 }
 
 .masonry-item {
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.2rem;
     border-radius: 0px;
     cursor: pointer;
     opacity: 0;
@@ -248,20 +259,16 @@ button:focus {
     transform: translateY(0);
 }
 
-.masonry-item:hover {
-    transform: scale(1.02);
-}
-
 /* Seção inicial centralizada */
 .content.home-padding-reset {
     padding: 0;
 }
 
 .home-wrapper {
-    height: calc(100vh - 56px); /* altura da tela menos navbar */
+    height: calc(100vh - 56px);
     display: flex;
-    justify-content: center; /* horizontal */
-    align-items: center; /* vertical */
+    justify-content: center;
+    align-items: center;
 }
 
 /* Efeito fade-in para a home */
@@ -328,15 +335,16 @@ button:focus {
 
 @media (max-width: 991.98px) {
     #sidebar {
-        left: -280px; /* escondido no mobile */
+        left: -280px;
+        top: 47px;
     }
     #sidebar.active {
         left: 0;
     }
     .content {
-        margin-left: 0; /* sem espaço no mobile */
+        margin-left: 0;
     }
     #toggleSidebar {
-        display: block; /* botão só aparece no mobile */
+        display: block;
     }
 }
