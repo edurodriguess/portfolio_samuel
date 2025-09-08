@@ -200,7 +200,7 @@ button:focus {
 }
 
 #lightboxModal {
-    background: rgba(230, 230, 230, 0.68);
+    background: #efede9;
 }
 
 #lightboxImage {
@@ -225,10 +225,18 @@ button:focus {
     top: 50%;
     transform: translateY(-50%);
     z-index: 2000;
-    background: rgba(0, 0, 0, 0.5);
+    background: transparent;
     border: none;
-    font-size: 2rem;
+    font-size: 50px;
     padding: 0.5rem 1rem;
+    color: #000;
+    margin: auto -40px;
+}
+
+#prevBtn,
+#nextBtn:hover {
+    background: transparent;
+    color: #000;
 }
 
 #prevBtn {
@@ -290,6 +298,11 @@ button:focus {
     animation: blink 0.7s infinite;
 }
 
+.img-sobre {
+    max-width: 100%;
+    max-height: 70vh;
+}
+
 @keyframes blink {
     0%,
     50%,
@@ -330,6 +343,10 @@ button:focus {
 @media (max-width: 576px) {
     #sidebar.active ~ .content {
         margin-left: 220px;
+    }
+
+    .img-fluid {
+        max-width: 80%;
     }
 }
 
