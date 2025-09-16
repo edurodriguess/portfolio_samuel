@@ -41,6 +41,11 @@ span {
     color: #4a4a4a;
 }
 
+.lead {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
 /* Links e botões de destaque */
 a,
 button {
@@ -53,12 +58,12 @@ button {
 
 a:hover,
 button:hover {
-    color: #e63946;
+    color: #000;
 }
 
 a:hover,
 button:focus {
-    color: #e63946;
+    color: #000;
 }
 
 .logo-main {
@@ -124,7 +129,7 @@ button:focus {
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background-color: #e63946; /* cor do círculo */
+    background-color: #000; /* cor do círculo */
     margin-right: 8px;
     vertical-align: middle;
 }
@@ -259,7 +264,7 @@ button:focus {
     cursor: pointer;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.6s cubic-bezier(0.5, 0, 1, 1);
 }
 
 .masonry-item.visible {
@@ -300,7 +305,7 @@ button:focus {
 
 .img-sobre {
     max-width: 100%;
-    max-height: 70vh;
+    max-height: 90vh;
 }
 
 @keyframes blink {
@@ -346,7 +351,8 @@ button:focus {
     }
 
     .img-fluid {
-        max-width: 80%;
+        max-width: 100%;
+        margin-top: 30px;
     }
 }
 

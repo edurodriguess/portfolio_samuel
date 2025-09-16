@@ -123,6 +123,47 @@ document.addEventListener("DOMContentLoaded", () => {
     typeLoop();
 });
 
+// Função para animar imagens com efeito ease-in ao mostrar uma seção
+function animateMasonryImages(section) {
+    const imgs = section.querySelectorAll(".masonry-item");
+    imgs.forEach((img) => img.classList.remove("visible"));
+    imgs.forEach((img, i) => {
+        setTimeout(() => {
+            img.classList.add("visible");
+        }, i * 50);
+    });
+}
+
+// NAVEGAÇÃO ENTRE SEÇÕES COM FADE-IN
+$$("[data-section-target]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const target = btn.getAttribute("data-section-target");
+
+        // remove "active" de todos os botões
+        $$("[data-section-target]").forEach((b) => b.classList.remove("active"));
+
+        // adiciona "active" no botão clicado
+        btn.classList.add("active");
+
+        // esconde todas com fade-out
+        $$(".content-section").forEach((sec) => {
+            sec.classList.remove("active"); // inicia fade-out
+            setTimeout(() => sec.classList.add("d-none"), 150); // espera a transição
+        });
+
+        // mostra a seção alvo com fade-in
+        const section = $(target);
+        section.classList.remove("d-none");
+        setTimeout(() => {
+            section.classList.add("active");
+            // anima as imagens da galeria da seção ativa
+            animateMasonryImages(section);
+        }, 10);
+
+        window.scrollTo({ behavior: "smooth" });
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function () {
     const toggleBtn = document.querySelector(".toggle-submenu");
     const submenu = document.querySelector(".submenu");
