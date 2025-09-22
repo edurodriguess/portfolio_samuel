@@ -173,3 +173,26 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleBtn.classList.toggle("active"); // seta gira
     });
 });
+
+// Mobile Menu Toggle
+const mobileMenuToggle = document.getElementById("mobileMenuToggle");
+const mobileSidebar = document.getElementById("mobileSidebar");
+
+mobileMenuToggle.addEventListener("click", () => {
+    const isActive = mobileSidebar.classList.toggle("active");
+    document.body.classList.toggle("mobile-sidebar-expanded", isActive);
+    mobileMenuToggle.setAttribute("aria-expanded", isActive);
+});
+
+// Fechar sidebar ao clicar fora (opcional)
+document.addEventListener("click", (e) => {
+    if (
+        !mobileSidebar.contains(e.target) &&
+        !mobileMenuToggle.contains(e.target) &&
+        mobileSidebar.classList.contains("active")
+    ) {
+        mobileSidebar.classList.remove("active");
+        document.body.classList.remove("mobile-sidebar-expanded");
+        mobileMenuToggle.setAttribute("aria-expanded", "false");
+    }
+});

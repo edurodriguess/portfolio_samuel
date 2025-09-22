@@ -351,8 +351,12 @@ button:focus {
     }
 
     .img-fluid {
-        max-width: 100%;
+        max-width: 80%;
         margin-top: 30px;
+    }
+
+    .text-start {
+        text-align: center !important;
     }
 }
 
@@ -369,5 +373,56 @@ button:focus {
     }
     #toggleSidebar {
         display: block;
+    }
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+    background: #efede9;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    z-index: 1050;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.mobile-logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #111;
+}
+
+/* Mobile Sidebar */
+.mobile-sidebar {
+    background: #efede9;
+    position: relative;
+    top: 56px;
+    left: 0;
+    right: 0;
+    display: block;
+    z-index: 1040;
+    overflow: hidden;
+    max-height: 0; /* Inicialmente colapsada */
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave e gradativa */
+}
+
+.mobile-sidebar.active {
+    max-height: 500px; /* Altura suficiente para exibir todos os itens */
+}
+
+/* Ajuste para o conteúdo ser empurrado */
+body.mobile-sidebar-expanded .content {
+    transition: margin-top 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave */
+}
+
+/* Responsividade */
+@media (min-width: 992px) {
+    .mobile-navbar,
+    .mobile-sidebar {
+        display: none;
     }
 }
